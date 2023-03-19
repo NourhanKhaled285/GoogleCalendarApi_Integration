@@ -1,0 +1,187 @@
+{
+	"info": {
+		"_postman_id": "e255b96a-3ff0-47f4-be62-0ea55cd90e75",
+		"name": "GoogleCalenderApis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19773904"
+	},
+	"item": [
+		{
+			"name": "GetGoogleCalenderEvent",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}api/GoogleCalendar/coclpd2ih91ot0k0o289bn72t4",
+					"host": [
+						"{{URL}}api"
+					],
+					"path": [
+						"GoogleCalendar",
+						"coclpd2ih91ot0k0o289bn72t4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateGoogleCalenderEvent",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Summary\": \"Graduation Project discuss\",\r\n  \"Description\": \"last discuss about my project\",\r\n  \"Location\": \"cairo,Egypt\",\r\n  \"Start\": \"2023-05-11T14:24:09+02:00\",\r\n  \"End\": \"2023-05-11T15:24:09+02:00\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}api/GoogleCalendar/",
+					"host": [
+						"{{URL}}api"
+					],
+					"path": [
+						"GoogleCalendar",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteGoogleCalenderEvent",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}api/GoogleCalendar/?summary=",
+					"host": [
+						"{{URL}}api"
+					],
+					"path": [
+						"GoogleCalendar",
+						""
+					],
+					"query": [
+						{
+							"key": "summary",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SearchEventByTitleOrDare",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}api/GoogleCalendar/Search?summary=Graduation Project discuss&date=",
+					"host": [
+						"{{URL}}api"
+					],
+					"path": [
+						"GoogleCalendar",
+						"Search"
+					],
+					"query": [
+						{
+							"key": "summary",
+							"value": "Graduation Project discuss"
+						},
+						{
+							"key": "date",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetGoogleCalendarEvents",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}api/GoogleCalendar",
+					"host": [
+						"{{URL}}api"
+					],
+					"path": [
+						"GoogleCalendar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateCalendarEvent",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Description\":\"this party event updated now\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}api/GoogleCalendar/?eventId=c534f4497bua63lceggh1jhbe0",
+					"host": [
+						"{{URL}}api"
+					],
+					"path": [
+						"GoogleCalendar",
+						""
+					],
+					"query": [
+						{
+							"key": "eventId",
+							"value": "c534f4497bua63lceggh1jhbe0"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "https://localhost:5001/"
+		}
+	]
+}
